@@ -1,0 +1,29 @@
+@import '../../../node_modules/bulma/css/bulma-rtl.min.css';
+* {
+  font-family: "Prompt", sans-serif;
+}
+
+body {
+  background-color: var(--bg);
+  height: 100vh;
+  max-height: 100%;
+}
+
+:root {
+  --bg: #000000;
+  --bg-card: #0E1218;
+  --text: #F1F1F1;
+  --img-profile: #8257e5;
+  --buttons: #FFF;
+  --border-button: #1A1A1A;
+}
+
+.has-text-light {
+  color: var(--text) !important;
+}
+
+.card {
+  background-color: var(--bg-card) !important;
+}
+
+/*# sourceMappingURL=style.css.map */
