@@ -1,9 +1,10 @@
 import { useState, Fragment, useEffect } from 'react'
 import api from './services/api'
-import man from './assets/images/man.jpg'
+// import man from './assets/images/man.jpg'
 
 function App() {
   const [user, setUser] = useState([])
+  const [number, setNumber] = useState(0)
 
   useEffect(() => {
     getUser()
@@ -14,8 +15,39 @@ function App() {
     setUser(data)
   }
 
+  let element = document.querySelector('.border');
+  switch (number) {
+    case 1:
+      element.classList.add('is-link')
+      element.classList.remove('is-light')
+      break;
+    case 2:
+      element.classList.add('is-success')
+      element.classList.remove('is-link')
+      break;
+    case 3:
+      element.classList.add('is-danger')
+      element.classList.remove('is-success')
+      break;
+    case 4:
+      element.classList.add('is-grey')
+      element.classList.remove('is-danger')
+      break;
+    case false:
+      element.classList.add('is-light')
+      element.classList.remove('is-grey')
+      break;
+    case false:
+      number == 0
+      break;
+  }
+
   function backButton() {
-    console.log('ok')
+    setNumber(number + 1)
+    if (number == 4) {
+      setNumber(number == 0)
+      return
+    }
   }
 
   return (
@@ -91,7 +123,7 @@ function App() {
           <div className="column is-flex is-align-items-center is-justify-content-center">
             <div className="has-text-centered">
               <div className="has-text-light is-size-3">Customizar Rocketcard</div>
-              <div onClick={backButton} className="button is-dark mt-5">Gerar background</div>
+              <div onClick={() => backButton()} className="button is-dark mt-5">Gerar background</div>
             </div>
           </div>
         </div>

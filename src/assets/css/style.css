@@ -39,6 +39,10 @@ body {
   color: #aaa7a7;
 }
 
+.is-light {
+  color: #fff;
+}
+
 .border {
   border-left: 30px solid;
   border-right: 30px solid;
